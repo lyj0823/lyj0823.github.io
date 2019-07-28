@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征方面可谓是鹤立鸡群">
+<meta name="description" content="基础概念，代码实现语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语音识别入门">
 <meta property="og:url" content="http://yoursite.com/2019/07/27/语音识别相关/index.html">
 <meta property="og:site_name" content="李元杰的博客">
-<meta property="og:description" content="语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征方面可谓是鹤立鸡群">
+<meta property="og:description" content="基础概念，代码实现语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T02:05:55.393Z">
+<meta property="og:updated_time" content="2019-07-28T02:31:06.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="语音识别入门">
-<meta name="twitter:description" content="语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征方面可谓是鹤立鸡群">
+<meta name="twitter:description" content="基础概念，代码实现语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征">
 
 
 
@@ -373,7 +373,7 @@
       
 
       
-        <center><font size="4">语音相关知识点</font></center>
+        <h4 id="基础概念，代码实现"><a href="#基础概念，代码实现" class="headerlink" title="基础概念，代码实现"></a>基础概念，代码实现</h4><center><font size="4">语音相关知识点</font></center>
 # MFCC
 [https://blog.csdn.net/zouxy09/article/details/9156785]()
 MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征方面可谓是鹤立鸡群，一枝独秀，从未被超越啊
@@ -383,7 +383,7 @@ MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话�
 <p>原始的频谱包含两部分：包络和频谱细节。这里使用对数频谱，单位db</p>
 <p>如何得到频谱和细节</p>
 <p>需要Play a Mathematical Trick,也就是对频谱做FFT，在频谱上做傅里叶变换相当于逆傅里叶变换IFFT</p>
-<center>
+<h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><h2 id="离散余弦变换"><a href="#离散余弦变换" class="headerlink" title="离散余弦变换"></a>离散余弦变换</h2><h2 id="梅尔频率"><a href="#梅尔频率" class="headerlink" title="梅尔频率"></a>梅尔频率</h2><h2 id="i-vector"><a href="#i-vector" class="headerlink" title="i-vector"></a>i-vector</h2><h2 id="CTC-loss"><a href="#CTC-loss" class="headerlink" title="CTC loss"></a>CTC loss</h2><h2 id="GMM-UBM模型"><a href="#GMM-UBM模型" class="headerlink" title="GMM-UBM模型"></a>GMM-UBM模型</h2><h2 id="Deep-Speech模型"><a href="#Deep-Speech模型" class="headerlink" title="Deep Speech模型"></a>Deep Speech模型</h2><center>
 Connectionist Temporal Classification
 </center>
 CTC是一种改进的RNN模型
@@ -480,8 +480,17 @@ CTC是一种改进的RNN模型
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +543,22 @@ CTC是一种改进的RNN模型
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础概念，代码实现"><span class="nav-number">1.</span> <span class="nav-text">基础概念，代码实现</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#傅里叶变换"><span class="nav-number"></span> <span class="nav-text">傅里叶变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散余弦变换"><span class="nav-number"></span> <span class="nav-text">离散余弦变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梅尔频率"><span class="nav-number"></span> <span class="nav-text">梅尔频率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#i-vector"><span class="nav-number"></span> <span class="nav-text">i-vector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTC-loss"><span class="nav-number"></span> <span class="nav-text">CTC loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GMM-UBM模型"><span class="nav-number"></span> <span class="nav-text">GMM-UBM模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Speech模型"><span class="nav-number"></span> <span class="nav-text">Deep Speech模型</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
