@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="李元杰的博客">
 <meta property="og:description" content="基础概念，代码实现语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T02:31:06.461Z">
+<meta property="og:updated_time" content="2019-07-28T14:00:10.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="语音识别入门">
 <meta name="twitter:description" content="基础概念，代码实现语音相关知识点 # MFCC [https://blog.csdn.net/zouxy09/article/details/9156785]() MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话人识别中广泛使用的特征。它是在1980年由Davis和Mermelstein搞出来的。从那时起。在语音识别领域，MFCCs在人工特征">
@@ -383,7 +383,15 @@ MFCCs（Mel Frequency Cepstral Coefficents）是一种在自动语音和说话�
 <p>原始的频谱包含两部分：包络和频谱细节。这里使用对数频谱，单位db</p>
 <p>如何得到频谱和细节</p>
 <p>需要Play a Mathematical Trick,也就是对频谱做FFT，在频谱上做傅里叶变换相当于逆傅里叶变换IFFT</p>
-<h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><h2 id="离散余弦变换"><a href="#离散余弦变换" class="headerlink" title="离散余弦变换"></a>离散余弦变换</h2><h2 id="梅尔频率"><a href="#梅尔频率" class="headerlink" title="梅尔频率"></a>梅尔频率</h2><h2 id="i-vector"><a href="#i-vector" class="headerlink" title="i-vector"></a>i-vector</h2><h2 id="CTC-loss"><a href="#CTC-loss" class="headerlink" title="CTC loss"></a>CTC loss</h2><h2 id="GMM-UBM模型"><a href="#GMM-UBM模型" class="headerlink" title="GMM-UBM模型"></a>GMM-UBM模型</h2><h2 id="Deep-Speech模型"><a href="#Deep-Speech模型" class="headerlink" title="Deep Speech模型"></a>Deep Speech模型</h2><center>
+<h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><h2 id="离散余弦变换"><a href="#离散余弦变换" class="headerlink" title="离散余弦变换"></a>离散余弦变换</h2><h2 id="梅尔频率"><a href="#梅尔频率" class="headerlink" title="梅尔频率"></a>梅尔频率</h2><p><a href="https://blog.csdn.net/zouxy09/article/details/9156785" target="_blank" rel="noopener">梅尔频率倒谱系数（MFCC）</a><br>提取MFCC步骤如下：<br>提取MFCC特征的过程：（具体的数学过程网上太多了，这里就不想贴了）</p>
+<p>1）先对语音进行预加重、分帧和加窗；</p>
+<p>2）对每一个短时分析窗，通过FFT得到对应的频谱；</p>
+<p>3）将上面的频谱通过Mel滤波器组得到Mel频谱；</p>
+<p>4）在Mel频谱上面进行倒谱分析（取对数，做逆变换，实际逆变换一般是通过DCT离散余弦变换来实现，取DCT后的第2个到第13个系数作为MFCC系数），获得Mel频率倒谱系数MFCC，这个MFCC就是这帧语音的特征；</p>
+<h2 id="i-vector"><a href="#i-vector" class="headerlink" title="i-vector"></a>i-vector</h2><h2 id="CTC-loss"><a href="#CTC-loss" class="headerlink" title="CTC loss"></a>CTC loss</h2><h2 id="GMM-UBM模型"><a href="#GMM-UBM模型" class="headerlink" title="GMM-UBM模型"></a>GMM-UBM模型</h2><p><a href="https://blog.csdn.net/zongza/article/details/82143278" target="_blank" rel="noopener">说话人识别模型</a></p>
+<p>###声纹可以作为判别不同人的依据是每个人的声音由不同的声腔尺寸和发声器官被操纵的方式，这两个因素使得声音变得独一无二</p>
+<p>GMM-UBM是为了解决说话人训练数据较少而提出的说话人识别模型</p>
+<h2 id="Deep-Speech模型"><a href="#Deep-Speech模型" class="headerlink" title="Deep Speech模型"></a>Deep Speech模型</h2><center>
 Connectionist Temporal Classification
 </center>
 CTC是一种改进的RNN模型
