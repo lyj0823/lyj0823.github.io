@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[Hexo参考资料]]></title>
     <url>%2F2019%2F07%2F26%2FHexo%20github%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[参考资料Hexo搭建博客——实现主页分页 ssh-key使用的是.ssh/id-rsa.pub文件中秘钥 最全Hexo博客搭建+主题优化+插件配置+常用操作+错误分析 hexo Hexo 博客美化配置 打造个性超赞博客Hexo+NexT+GithubPages的超深度优化 修改hexo博客next主题文章页面宽度]]></content>
+    <content type="text"><![CDATA[参考资料Hexo搭建博客——实现主页分页 ssh-key使用的是.ssh/id-rsa.pub文件中秘钥 最全Hexo博客搭建+主题优化+插件配置+常用操作+错误分析 hexo Hexo 博客美化配置 打造个性超赞博客Hexo+NexT+GithubPages的超深度优化 修改hexo博客next主题文章页面宽度 现在使用的页面宽度设置https://github.com/myoss/hexo-theme-next/commit/ef87a48c169589aa1a512261abce967bfb3a6c9f]]></content>
       <categories>
         <category>hexo入门</category>
       </categories>
